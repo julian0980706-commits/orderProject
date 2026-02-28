@@ -1,0 +1,22 @@
+git config --list 查看設定
+git config --global user.name "(userName)"	
+git config --global user.name "(e-mail)"	
+git init
+git status
+git add filename
+git add. 將全部檔案移去暫存區(還沒存) 除了ignore裡的
+
+git add *js 副檔名是js的
+git add secret*js開頭是secret副檔名是js的
+git add *login* 檔名有login的
+git add css/*加入 css 資料夾下所有東西
+git add img/*.png加入 img 資料夾內所有 PNG 圖
+!!!雖然 * 很方便，但它有一個致命缺點：它會忽略.gitignore
+
+git commit -m"" 將暫存區資料存起來
+
+git log查詢歷史紀錄
+git log --oneline查詢歷史紀錄(單行顯示 資訊較不複雜)
+!!進入git log 或其他模式時，會進入閱讀模式(上下鍵閱讀)
+按q離開
+(HEAD->master)是最新的 由上到下，從新到舊
