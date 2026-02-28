@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>點餐紀錄</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="document.css"/>
+</head>
+<body style="margin: 0;">
+    <button id="document" onclick="window.location.href='document.html'">歷史點餐紀錄</button>
+    
+    <div id="table_area"></div>
+
+    <div id="main-menu">
+        <div id="function-panel">
+            <div class="grid-layout">
+                <button class="item-btn" id="steak">小虎牛排</button>
+                <button class="item-btn" id="spicy">成功燒臘</button>
+                <button class="item-btn" id="curry">柴與咖哩</button>
+                <button class="item-btn" id="lunchbox">悟饕</button>
+                <button class="item-btn" id="beanDad">竇爸</button>
+                <button class="item-btn" id="susi">海苔捲</button>
+                <button class="item-btn" id="redBuilding">紅樓</button>
+                <button class="item-btn" id="firemeat">永樂燒肉飯</button>
+                <button class="item-btn" id="southSeaChickenRice">海南雞飯</button>
+                <button class="item-btn" id="turkey">火雞肉飯</button>
+                <button class="item-btn" id="beefnoodles">木鱉果牛肉麵</button>
+                <button class="item-btn" id="dumplings">八方雲集</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="container">
+        <button class="box" id="box1">主頁</button>
+        <button class="box" id="box2">點餐</button>
+        <button class="box" id="box3">點餐紀錄</button>
+        <button class="box" id="box4">月曆</button>
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="documentOnly.js"></script>
+</body>
+</html>

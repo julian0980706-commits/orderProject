@@ -1,0 +1,75 @@
+#table{
+    border-collapse: collapse;
+    border: 2px solid #5a4a6b; /* 深紫色邊框 */
+    table-layout: fixed;
+    width: 95%; /* 手機版建議寬一點 */
+    max-width: 400px;
+    margin: 0px auto 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 輕微陰影 */
+}
+th{
+    font-size: xx-large;
+    border-collapse: collapse;
+    border: solid black 2px;
+    background-color: rgb(208, 165, 248);
+    color: black;
+    width: 50%!important;;
+}
+td{
+    width: 50%!important;;
+    border-collapse: collapse;
+    border: solid black 2px;
+    height: 50px;
+    background-color: rgb(246, 246, 64);
+    text-align: center;
+    align-content: center;
+    font-size: larger;
+}
+input{
+    width: 50px;
+    height: 50px;
+}
+#commit{
+    justify-self: center;
+    width: 100px;height: 40px;
+    background-color: rgb(255, 8, 8,0.7);
+    border-radius: 30px;
+    
+}
+#delarea {
+    width: 250px; /* 寬度稍微拉開，讓標題不擁擠 */
+    height: 150px; /* 增加一點點高度給 Padding */
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+#flexarea {
+    margin: 0;
+    width: 100%; /* 適應父容器 */
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#confirm { background-color: #06e89d; border: none; }
+#cancel { background-color: #ff4d4d; color: white; border: none; }
+#confirm, #cancel {
+    display: flex; /* 讓文字垂直水平置中 */
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* 高度微調更精緻 */
+    width: 90px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#delarea::backdrop {
+    background-color: rgba(0, 0, 0, 0.4); /* 遮罩深一點點，讓視窗更明顯 */
+    backdrop-filter: blur(3px); /* 模糊度提高一點點增加質感 */
+    -webkit-backdrop-filter: blur(3px);
+}

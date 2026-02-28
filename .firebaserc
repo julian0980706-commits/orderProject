@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "order-9430b"
+  },
+  "targets": {
+    "order-9430b": {
+      "hosting": {
+        "frontend": [
+          "order-9430b"
+        ],
+        "admin": [
+          "admin0980706"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,104 @@
+/* 全域字體優化 */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+    background-color: #fcfcfc;
+}
+
+#calendar {
+    border-collapse: collapse;
+    border: 2px solid #5a4a6b; /* 深紫色邊框 */
+    table-layout: fixed;
+    width: 95%; /* 手機版建議寬一點 */
+    max-width: 400px;
+    margin: 0px auto 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 輕微陰影 */
+}
+
+th {
+    border: 1px solid #5a4a6b;
+    background-color: #d0a5f8; /* 優雅紫 */
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+}
+td:active{ /*注意td和:之間不可有空格*/
+    background-color: #f0f0f0; /* 手指按下去時格子變色 */;
+}
+td {
+    border: 1px solid #ddd;
+    height: 90px;
+    background-color: #fffef2; /* 淺奶油黃 */
+    text-align: center;
+    vertical-align: top; /* 讓日期數字在上方 */
+    padding: 5px;
+    font-size: 16px; /* 防止 iOS 縮放 */
+    color: #444;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 針對 iOS 選單的特別處理 */
+select {
+    width: 90%;
+    height: 32px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 14px; /* 選單文字大小 */
+    
+    /* 核心：消除 iOS 預設醜樣式 */
+    -webkit-appearance: none; 
+    appearance: none; 
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+/* 下方按鈕美化 */
+#nextmonth, #premonth {
+    width: 100px;
+    height: 40px;
+    background-color: #82e0aa; /* 柔和綠 */
+    border: none;
+    border-radius: 20px;
+    margin: 15px;
+    color: #2c3e50;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* 消除 iOS 點擊藍框 */
+}
+
+#nextmonth:active, #premonth:active {
+    background-color: #58d68d;
+    transform: scale(0.95);
+}
+*{
+    -webkit-user-select: none;
+    user-select: none;
+}
+th{
+    font-size: 1.25rem;
+}
+#dialog{
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90vw;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+#con{
+    width: 100%;
+    aspect-ratio: 5/4 ; /* 維持比例 */
+    overflow: hidden;
+    border: 2px solid #5a4a6b;
+    border-radius: 10px;
+}
+#QA{
+    position: fixed; top: 15px;right: 15px;
+    font-size: 1.2rem; height: 60px; width: 60px;
+    border-radius: 30px; border: solid 2px #2c3e50;
+    background-color: rgb(237, 31, 52); font-weight: bold;
+    cursor: pointer;
+}

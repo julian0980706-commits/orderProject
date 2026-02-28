@@ -1,0 +1,111 @@
+/* --- 基礎設定：優化 iOS 體驗 --- */
+* {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
+/* 保持你原本的名稱，不動它 */
+#table_area {
+    width: 100%;
+    display: block; 
+    /* 這裡設定 150px 留白，如果還是不夠滑再往加 */
+    padding-bottom: calc(150px + env(safe-area-inset-bottom)); 
+    overflow: visible; /* 確保內容不會被切掉 */
+}
+
+/* 針對 HTML 裡的兩個表格：#sum 和 #table */
+#sum, #table {
+    margin: 20px auto; /* 關鍵：強制左右自動邊距，達成置中 */
+    table-layout: fixed;
+    width: 92%; 
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #6a0dad;
+    color: white;
+    border: solid 1px #ddd;
+    padding: 12px 0;
+}
+
+tr {
+    background-color: #fff9f0;
+    border: solid 1px #ddd;
+}
+
+/* 斑馬紋效果：修正你的 ID 選擇器 */
+#table tbody tr:nth-child(even) {
+    background-color: #f2ede4 !important;
+}
+
+/* 刪除按鈕置中 */
+#delete {
+    display: block;
+    margin: 30px auto; 
+    background-color: #00ffd0;
+    border-radius: 12px;
+    border: 1px solid black;
+    transform: scale(1.5);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+/* --- 指南 Dialog 視窗 (不變動) --- */
+#guide_dialog {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+    width: 85vw;
+    max-width: 400px;
+    overflow: hidden; 
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#guide_dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.slider_wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+}
+
+.slider_wrapper::-webkit-scrollbar { display: none; }
+
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; 
+}
+
+.dialog_footer {
+    padding: 15px;
+    text-align: center;
+    background: white;
+}
+
+#close_guide_btn {
+    width: 80%;
+    padding: 12px;
+    background: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

@@ -1,0 +1,46 @@
+#logOut{
+    height: 60px;width: 60px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: large;
+    background-color: aquamarine;
+    color: black;
+    position: fixed;top: 0;right: 0;
+    margin: 30px;
+}
+#logOutArea {
+    width: 250px; /* 寬度稍微拉開，讓標題不擁擠 */
+    height: 150px; /* 增加一點點高度給 Padding */
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+#flexarea_lo {
+    margin: 0;
+    width: 100%; /* 適應父容器 */
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#confirm_lo { background-color: #06e89d; border: none; }
+#cancel_lo { background-color: #ff4d4d; color: white; border: none; }
+#confirm_lo, #cancel_lo {
+    display: flex; /* 讓文字垂直水平置中 */
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* 高度微調更精緻 */
+    width: 90px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#logOutArea::backdrop {
+    background-color: rgba(0, 0, 0, 0.4); /* 遮罩深一點點，讓視窗更明顯 */
+    backdrop-filter: blur(3px); /* 模糊度提高一點點增加質感 */
+    -webkit-backdrop-filter: blur(3px);
+}

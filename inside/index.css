@@ -1,0 +1,91 @@
+/* 1. 定義發光動畫 */
+@keyframes neon_pulse {
+    0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+    50% { box-shadow: 0 0 20px var(--glow-color); }
+    100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+}
+
+@keyframes lay_in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. 共用設定：為不同按鈕定義發光顏色變數 */
+#box1 { background-color: #55efc4; --glow-color: #55efc4; } 
+#box2 { background-color: #fab1a0; --glow-color: #fab1a0; } 
+#box3 { background-color: #74b9ff; --glow-color: #74b9ff; } 
+#box4 { background-color: #ffeaa7; --glow-color: #ffeaa7; }
+
+#container button {
+    flex: 1; 
+    height: 100px; 
+    border: solid 2px #2c3e50; 
+    border-radius: 10px; 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2c3e50; 
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+
+    /* 新增：平滑過渡效果 */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* 3. 讓使用者爽的發光 Border 邏輯 */
+#container button:active {
+    /* 按下去時邊框變白色，並觸發強烈的霓虹光 */
+    border-color: #ffffff;
+    box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
+    transform: scale(0.95) translateY(-5px); /* 縮小並微微浮起 */
+    z-index: 1000;
+}
+
+/* 4. 修改後的 Container (加入毛玻璃效果，讓發光更明顯) */
+#container {
+    align-items: flex-end;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.8); /* 稍微透明 */
+    backdrop-filter: blur(10px); /* iOS 毛玻璃，發光背景會很美 */
+    -webkit-backdrop-filter: blur(10px);
+    
+    padding: 5px 5px env(safe-area-inset-bottom) 5px;
+    box-sizing: border-box; 
+    animation: lay_in 0.4s ease-out;
+    z-index: 999;
+    gap: 5px; /* 讓按鈕間有點縫隙，發光才不會撞在一起 */
+}
+
+/* 5. 頂部紀錄按鈕也加個發光 */
+#document {
+    position: fixed; top: 25px; left: 25px;
+    background-color: rgb(235, 102, 235);
+    font-size: 1.2rem;
+    height: 100px; 
+    width: 100px;
+    border: solid 2px #2c3e50; 
+    border-radius: 50px; 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #2c3e50; 
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.2s;
+}
+
+#document:active {
+    box-shadow: 0 0 20px rgb(235, 102, 235);
+    transform: rotate(-10deg) scale(1.1); /* 點擊時歪一下，很有趣 */
+}

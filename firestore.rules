@@ -1,0 +1,10 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow get,list, create:if true;//允許大家創立新文件和讀取文件
+      allow delete,update: if request.auth != null && request.auth.token.email == "me@test.com";//只有我的帳號可以寫入
+  }
+}
+}

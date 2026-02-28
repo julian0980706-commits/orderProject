@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>點餐</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="steak.css"/>
+</head>
+<body style="margin: 0px;"> 
+    <div id="main" style="display: none;">
+        <h1 style="text-align: center;">小虎牛排</h1>
+        <form id="form">
+            <div id="op">
+                <h2 style="text-align: center;margin: 0;">排</h2>
+                <div style="display: flex; justify-content: center;"><button id="random" type="button">隨機</button></div>
+                <div class="e" id="emeal" style="color: red;justify-self: center;align-self: center;">ㄟ你忘記了</div>
+                <label><input type="radio" name="meal" value="牛肉鐵板麵90"/>牛肉鐵板麵90</label>
+                <label><input type="radio" name="meal" value="豬肉鐵板麵90"/>豬肉鐵板麵90</label>
+                <label><input type="radio" name="meal" value="羊肉鐵板麵90"/>羊肉鐵板麵90</label>   
+                <label><input type="radio" name="meal" value="雙拼鐵板麵90"/>雙拼鐵板麵90</label>   
+                <label><input type="radio" name="meal" value="豬排100"/>豬排100</label>   
+                <label><input type="radio" name="meal" value="雞腿排120"/>雞腿排120</label>   
+                <label><input type="radio" name="meal" value="牛排140"/>牛排140</label>   
+                <label><input type="radio" name="meal" value="厚片牛排190"/>厚片牛排190</label>   
+                <label><input type="radio" name="meal" value="菲力牛排250"/>菲力牛排250</label>
+            </div>
+            <div class="con">
+                <div class="e" id="esauce" style="color: red;justify-self: center;align-self: center;">ㄟ你忘記了</div>
+                <select id="sauce" >
+                    <option value="醬料">醬料</option>
+                    <option value="洋蔥">洋蔥</option>
+                    <option value="黑胡椒">黑胡椒</option>
+                    <option value="綜合">綜合</option>
+                </select>
+            </div>
+            <div class="con">
+                <div class="e" id="esidedish" style="color: red;justify-self: center;align-self: center;">ㄟ你忘記了</div>
+                <select id="sidedish" style="width: 50vw;">
+                    <option value="湯or紅茶">湯or紅茶</option>
+                    <option value="玉米濃湯">玉米濃湯</option>
+                    <option value="紅茶">紅茶</option>
+                </select>   
+            </div>
+            <div class="con">
+            <div class="e" id="enum" style="color: red;justify-self: center;align-self: center;">ㄟ你忘記了</div>
+            <input id="text" type="text" placeholder="座號(別班的打名字)" autocomplete="off" autocorrect="off" autocapitalize="off" >
+            </div>
+            <div class="con">
+                <button type="reset" id="restart">重置表單</button>
+                <button type="submit" id="sub" style="color: blue;">提交表單</button>  
+            </div>
+        </form>
+    </div>
+    <dialog id="dialog" >
+        <div id="con"><img src="images/QA6.png"></div>
+        <button style="border-radius: 15px; display: block; width: 80px;height: 30px;background-color:rgb(241, 125, 125);margin: 10px auto 10px auto;" id="close">我知道了</button>
+    </dialog>
+    <div id="animation" style="display: none;">
+        <div class="ani-box">
+            <h1>表單送出</h1>
+            <dotlottie-wc
+                src="images/orderAnimation.lottie"
+                style="transform: scale(3);margin-top: 100px;"
+                autoplay
+                loop>
+            </dotlottie-wc>
+        </div>
+    </div>
+    <div id="container">
+            <button class="box" id="box1">主頁</button>
+            <button class="box" id="box2" style="height: 120px;">點餐</button>
+            <button class="box" id="box3">點餐紀錄</button>
+            <button class="box" id="box4">月曆</button>
+            </div>
+    <dotlottie-wc
+        id="animation_loading"
+        src="images/animation.lottie"
+        style="width: 420px;height: 480px;display: none;position: relative;bottom: -100px;"
+        autoplay
+        loop
+    ></dotlottie-wc>
+    <!--隨便引的動畫-->
+    <script type="module" src="index.js"></script>
+    <script type="module" src="steak.js"></script>
+</body>
+</html>

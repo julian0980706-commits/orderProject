@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <title>訂餐大廳</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="indexOnly.css"/>
+</head>
+<body style="margin: 0px; background-color: #f7f9fb;"> 
+    <button id="document" onclick="window.location.href='document.html'">所有點餐紀錄</button>
+    <button id="QA">指南</button>
+    <div class="hero-title-container">
+        <h1 id="hero-title">明天午餐</h1>
+    </div>
+
+    <div id="guide_overlay" class="hide">
+        <div id="guide_dialog" >
+            <div class="dialog_content">
+                <h1 id="title" style="text-align: center;">使用指南</h1>
+                <div id="window">
+                    <div class="slide"><img src="forms/images/QA1.png"></div>
+                    <div class="slide"><img src="forms/images/QA2.png"></div>
+                    <div class="slide"><img src="forms/images/QA4.png"></div>
+                    <div class="slide"><img src="forms/images/QA5.png"></div>
+                    <div class="slide"><img src="forms/images/QA6.png"></div>
+                    <a class="prev" id="prevBtn">&#10094;</a>
+                    <a class="next" id="nextBtn">&#10095;</a>
+                </div>
+                <button id="close">關閉</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="container">
+        <button class="box" id="box1" style="height: 120px;">主頁</button>
+        <button class="box" id="box2">點餐</button>
+        <button class="box" id="box3">點餐紀錄</button>
+        <button class="box" id="box4">月曆</button>
+    </div>
+    
+    <script>
+        const tomorrowLunch=document.getElementById("hero-title")
+        const change=()=>{tomorrowLunch.style.color=`rgb(${Math.random()*250},${Math.random()*250},${Math.random()*250})`} 
+        change()
+        tomorrowLunch.addEventListener("click",change)
+    </script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="indexOnly.js"></script>
+</body>
+</html>

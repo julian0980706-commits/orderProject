@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--以下兩行防ios-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐紀錄</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="remeber.css"/>
+</head>
+<body style="margin: 0px;"> <!--因為瀏覽器預設margin是8:(-->
+    <div id="form_area" style="display: none;">
+        <h1 style="justify-self: center;">小虎牛排</h1>
+        <table id="sum"></table>
+        <table id="table">
+            <thead>
+                <th>座號</th>
+                <th>主餐</th>
+                <th>附餐</th>
+                <th>時間</th>
+            </thead>    
+            <tbody>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+        </table>
+        <div style="display: flex; width: 100% ;justify-content: center;">
+            <button id="delete">刪除</button>
+        </div>
+        <dialog id="delarea"><!--特殊容器標籤 能夠獨立視窗 防止後面被點擊 預設display:none-->
+            <div style="height: 20px; margin: 0; text-align: center;">
+                <h2 style="font-size: 25px;margin: 0; position: relative;bottom: 7px;">確定刪除表格?</h2>
+            </div>
+            <div id="flexarea">
+                <button id="cancel">取消</button>
+                <button id="confirm">確定</button>
+            </div>
+        </dialog>
+        
+    </div>
+    <dotlottie-wc
+        id="animation"
+        src="https://lottie.host/1a7d6056-6be6-47f3-a687-fd67a8cce74a/tkvkD3p8Yo.lottie"
+        style="width: 420px;height: 480px;display: none;"
+        autoplay
+        loop
+    ></dotlottie-wc>
+    <div id="container">
+        <button class="box" id="box1" >主頁</button>
+        <button class="box" id="box2" >點餐</button>
+        <button class="box" id="box3" style="height: 120px;">點餐紀錄</button>
+        <button class="box" id="box4" >日曆</button>
+    </div>
+    
+    <script type="module" src="remember.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

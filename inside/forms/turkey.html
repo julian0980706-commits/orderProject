@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>點餐</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="steak.css"/>
+</head>
+<body style="margin: 0px;"> 
+    <div id="main" style="display: none;">
+        <h1 style="text-align: center;">火雞肉飯</h1>
+        <form id="form">
+            <div id="op">
+                <h2 style="text-align: center;margin: 0;">吃甚麼</h2>
+                <div class="e" id="emeal" style="color: red; text-align: center; padding: 10px;">ㄟ你忘記了</div>
+                <div style="display: flex; justify-content: center;"><button id="random" type="button">隨機</button></div>
+                <label><input type="radio" name="meal" value="火雞便當(大)90"/>火雞便當(大)90</label>
+                <label><input type="radio" name="meal" value="火雞便當(小)70"/>火雞便當(小)70</label>
+                <label><input type="radio" name="meal" value="我不要吃"/>我不要吃</label>
+            </div>
+            <div class="con" style="flex-direction: column; padding: 0; overflow: hidden; gap: 0;">
+                <img src="images/turkey.jpg" alt="菜單圖片" style="width: 100%; height: auto; display: block;">
+                <div style="width: 100%; padding: 20px 0; display: flex; justify-content: center;">
+                    <input id="extra" type="text" placeholder="加點區" 
+                        style="height: 40px; width: 60vw; border-radius: 5px; border: solid black 1px; font-size: 1.3rem; padding: 0 10px; color: black; -webkit-appearance: none;">
+                </div>
+            </div>
+            <div class="con" style="flex-direction: column;">
+                <div class="e" id="enum" style="color: red; margin-bottom: 5px;">ㄟ你忘記了</div>
+                <input id="text" type="text" placeholder="座號(別班的打名字)" autocomplete="off" autocorrect="off" autocapitalize="off" >
+            </div>
+            <div class="con">
+                <button type="reset" id="restart">重置表單</button>
+                <button type="submit" id="sub" style="color: blue;">提交表單</button>  
+            </div>
+        </form>
+    </div>
+    <dialog id="dialog" >
+        <div id="con"><img src="images/QA6.png"></div>
+        <button style="border-radius: 15px; display: block; width: 80px;height: 30px;background-color:rgb(241, 125, 125);margin: 10px auto 10px auto;" id="close">我知道了</button>
+    </dialog>
+    <div id="animation" style="display: none;">
+        <div class="ani-box">
+            <h1>表單送出</h1>
+            <dotlottie-wc
+                src="images/orderAnimation.lottie"
+                style="transform: scale(3);margin-top: 100px;"
+                autoplay
+                loop>
+            </dotlottie-wc>
+        </div>
+    </div>
+
+    <div id="container">
+        <button class="box" id="box1">主頁</button>
+        <button class="box" id="box2" style="height: 120px;">點餐</button>
+        <button class="box" id="box3">點餐紀錄</button>
+        <button class="box" id="box4">月曆</button>
+    </div>
+
+    <dotlottie-wc
+        id="animation_loading"
+        src="images/animation.lottie"
+        style="width: 420px;height: 480px;display: none;position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;"
+        autoplay
+        loop
+    ></dotlottie-wc>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="turkey.js"></script>
+</body>
+</html>

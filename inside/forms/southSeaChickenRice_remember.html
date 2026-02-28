@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--以下兩行防ios-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐紀錄</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="steak_remember.css"/>
+    <style>
+        .image-display-area {
+            width: 90%;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .image-display-area img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover; /* 讓圖片填滿區域但不變形 */
+        }
+    </style>
+</head>
+<body style="margin: 0px;"> <!--因為瀏覽器預設margin是8:(-->
+    <div id="form_area" style="display: none;">
+        <h1 style="text-align: center;">海南雞飯</h1>
+        <div class="image-display-area" id="meal_image_container">
+            <img src="images/southSeaChickenRice.jpg" alt="餐點圖片">
+        </div>
+        <table id="sum"></table>
+        <table id="table">
+            <thead>
+                <th>座號</th>
+                <th>餐點</th>
+                <th>加點</th>
+                <th>時間</th>
+            </thead>    
+            <tbody>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+    <dotlottie-wc
+        id="animation"
+        src="images/animation.lottie"
+        style="width: 420px; height: 480px; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;"
+        autoplay
+        loop
+    ></dotlottie-wc>
+    <div id="container">
+        <button class="box" id="box1" >主頁</button>
+        <button class="box" id="box2" >點餐</button>
+        <button class="box" id="box3" style="height: 120px;">點餐紀錄</button>
+        <button class="box" id="box4" >月曆</button>
+    </div>
+    <script type="module" src="southSeaChickenRice_remember.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

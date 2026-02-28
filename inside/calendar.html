@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--以下兩行防ios-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日歷</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="calendar.css"/>
+    <script
+        src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
+        type="module"
+    ></script>
+</head>
+<body> <!--因為瀏覽器預設margin是8:(-->
+    <button id="QA" style="display: none;">指南</button>
+    <div style="padding-bottom: 150px">
+        <div style="display: flex;justify-content: center;margin: 0;">
+            <h1 style="font-size: 2.5rem; margin: 15px;" id="monthdisplay"></h1>
+        </div>
+        <h3 id="smallTitle" style="display: none; text-align: center;color: rgba(236, 61, 61, 0.963); margin-top: 25px;">註:紅底白字是今天</h3>
+        <table id="calendar" style="display: none;">
+            <tr>
+                <th>Sun.</th>
+                <th>Mon.</th>
+                <th>Tue.</th>
+                <th>Wed.</th>
+                <th>Thu.</th>
+                <th>Fri.</th>
+                <th>Sat.</th>
+            </tr>
+            <tbody id="days">
+            </tbody>
+        </table>
+        <div style=" display: flex;text-align: center; margin-bottom: 20px;justify-content: space-around;">
+            <button style="display: none;" id="premonth">上個月</button>
+            <button style="display: none;" id="nextmonth">下個月</button>
+        </div>
+    </div>
+    <div id="container">
+        <button class="box" id="box1" >主頁</button>
+        <button class="box" id="box2" >點餐</button>
+        <button class="box" id="box3">點餐紀錄</button>
+        <button class="box" id="box4" style="height: 120px;">月曆</button>
+    </div>
+    <dialog id="dialog" >
+        <div id="con"><img src="forms/images/calendar.png"></div>
+        <button style="border-radius: 15px; display: block; width: 80px;height: 30px;background-color:rgb(241, 125, 125);margin: 10px auto 10px auto;" id="close">我知道了</button>
+    </dialog>
+    <dotlottie-wc
+        id="animation"
+        src="forms/images/animation.lottie"
+        style="width: 420px; height: 480px; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;"
+        autoplay
+        loop
+    ></dotlottie-wc>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="calendar.js"></script>
+</body>
+</html>

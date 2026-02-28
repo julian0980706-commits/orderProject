@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>點餐</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="steak.css"/>
+</head>
+<body style="margin: 0px;"> 
+    <div id="main" style="display: none;">
+        <h1 style="text-align: center;">永樂燒肉飯</h1>
+        <form id="form">
+            <div id="op">
+                <h2 style="text-align: center;margin: 0;">每份就是肉+飯+薑片+一碗沙拉+一碗味增湯 全部都要拿走😡</h2>
+                <div class="e" id="emeal" style="color: red; text-align: center; padding: 10px;">ㄟ你忘記了</div>
+                <div style="display: flex; justify-content: center;"><button id="random" type="button">隨機</button></div>
+                <label><input type="radio" name="meal" value="燒肉飯90"/>燒肉飯90</label>
+                <label><input type="radio" name="meal" value="爌肉飯90"/>爌肉飯90</label>
+                <label><input type="radio" name="meal" value="雞腿飯95"/>雞腿飯95</label>   
+            </div> 
+            
+            <div class="con" style="flex-direction: column; align-items: center; padding: 20px 0;">
+                <div style="color: black; margin-bottom: 5px; font-size: 1.5rem;">加點區</div>
+                <div style="display: flex; flex-direction: column; align-items: flex-start; width: 180px;">
+                    <label style="display: flex; align-items: center; padding: 10px 0; color: #333; width: 100%;">
+                        <input id="exMeat" type="checkbox" name="extra" value="加肉25" style="width: 25px; height: 25px; margin-right: 15px; -webkit-appearance: checkbox; flex-shrink: 0;"/>
+                        <span style="font-size: 1.4rem; line-height: 1;">加肉25</span>
+                    </label>
+                    <label style="display: flex; align-items: center; padding: 10px 0; color: #333; width: 100%;">
+                        <input id="exRice1" type="checkbox" name="extra" value="加飯5" style="width: 25px; height: 25px; margin-right: 15px; -webkit-appearance: checkbox; flex-shrink: 0;"/>
+                        <span style="font-size: 1.4rem; line-height: 1;">加飯5</span>
+                    </label>
+                    <label style="display: flex; align-items: center; padding: 10px 0; color: #333; width: 100%;">
+                        <input id="exRice2" type="checkbox" name="extra" value="加飯10" style="width: 25px; height: 25px; margin-right: 15px; -webkit-appearance: checkbox; flex-shrink: 0;"/>
+                        <span style="font-size: 1.4rem; line-height: 1;">加飯10</span>
+                    </label>
+                </div>
+            </div>
+            <div class="con" style="flex-direction: column;">
+                <div class="e" id="enum" style="color: red; margin-bottom: 5px;">ㄟ你忘記了</div>
+                <input id="text" type="text" placeholder="座號(別班的打名字)" autocomplete="off" autocorrect="off" autocapitalize="off" >
+            </div>
+            <div class="con">
+                <button type="reset" id="restart">重置表單</button>
+                <button type="submit" id="sub" style="color: blue;">提交表單</button>  
+            </div>
+        </form>
+    </div>
+    <dialog id="dialog" >
+        <div id="con"><img src="images/QA6.png"></div>
+        <button style="border-radius: 15px; display: block; width: 80px;height: 30px;background-color:rgb(241, 125, 125);margin: 10px auto 10px auto;" id="close">我知道了</button>
+    </dialog>
+    <div id="animation" style="display: none;">
+        <div class="ani-box">
+            <h1>表單送出</h1>
+            <dotlottie-wc
+                src="images/orderAnimation.lottie"
+                style="transform: scale(3);margin-top: 100px;"
+                autoplay
+                loop>
+            </dotlottie-wc>
+        </div>
+    </div>
+
+    <div id="container">
+        <button class="box" id="box1">主頁</button>
+        <button class="box" id="box2" style="height: 120px;">點餐</button>
+        <button class="box" id="box3">點餐紀錄</button>
+        <button class="box" id="box4">月曆</button>
+    </div>
+
+    <dotlottie-wc
+        id="animation_loading"
+        src="images/animation.lottie"
+        style="width: 420px;height: 480px;display: none;position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;"
+        autoplay
+        loop
+    ></dotlottie-wc>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="firemeat.js"></script>
+</body>
+</html>

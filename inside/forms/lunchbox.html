@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>點餐</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="steak.css"/>
+</head>
+<body style="margin: 0px;"> 
+    <div id="main" style="display: none;">
+        <h1 style="text-align: center;">悟饕</h1>
+        <form id="form">
+            <div id="op">
+                <h2 style="text-align: center;margin: 0;">吃甚麼</h2>
+                <div class="e" id="emeal" style="color: red; text-align: center; padding: 10px;">ㄟ你忘記了</div>
+                <div style="display: flex; justify-content: center;"><button id="random" type="button">隨機</button></div>
+                <label><input type="radio" name="meal" value="經典池上95"/>經典池上95</label>
+                <label><input type="radio" name="meal" value="炭火烤肉100"/>炭火烤肉100</label>
+                <label><input type="radio" name="meal" value="黃金豬105"/>黃金豬105</label>   
+                <label><input type="radio" name="meal" value="悟饕經典排骨120"/>悟饕經典排骨120</label>   
+                <label><input type="radio" name="meal" value="鐵道排骨120"/>鐵道排骨120</label>   
+                <label><input type="radio" name="meal" value="香酥G腿125"/>香酥G腿125</label>   
+                <label><input type="radio" name="meal" value="土雞肉飯95"/>土雞肉飯95</label> 
+                <label><input type="radio" name="meal" value="悟饕大雞排125"/>悟饕大雞排125</label>   
+                <label><input type="radio" name="meal" value="椒麻雞腿飯包125"/>椒麻雞腿飯包125</label>
+                <label><input type="radio" name="meal" value="蒲燒鯛魚100"/>蒲燒鯛魚100</label>
+                <label><input type="radio" name="meal" value="雙醬咖哩豚肉105"/>雙醬咖哩豚肉105</label>
+                <label><input type="radio" name="meal" value="台式控肉115"/>台式控肉115</label>
+                <label><input type="radio" name="meal" value="糖燻烤雞腿105"/>糖燻烤雞腿105</label>
+                <label><input type="radio" name="meal" value="茶香滷雞腿120"/>茶香滷雞腿120</label>
+                <label><input type="radio" name="meal" value="挪威鯖魚135"/>挪威鯖魚135</label>
+                <label><input type="radio" name="meal" value="卡哇伊飯70"/>卡哇伊飯70(小朋友專屬喔🥺)</label>
+                <label><input type="radio" name="meal" value="魚排飯80"/>魚排飯80</label>
+                <label><input type="radio" name="meal" value="柳葉魚飯80"/>柳葉魚飯80</label>
+                <label><input type="radio" name="meal" value="香腸飯80"/>香腸飯80</label>
+                <label><input type="radio" name="meal" value="日式腿排飯85"/>日式腿排飯85</label>
+                <label><input type="radio" name="meal" value="藍帶豬排飯85"/>藍帶豬排飯85</label>
+                <label><input type="radio" name="meal" value="無骨雞排飯85"/>無骨雞排飯85</label>
+                <label><input type="radio" name="meal" value="灶咖豬排飯90"/>灶咖豬排飯90</label>
+                <label><input type="radio" name="meal" value="燒肉飯90"/>燒肉飯90</label>
+                <label><input type="radio" name="meal" value="轟雞腿飯90"/>轟雞腿飯90</label>
+                <label><input type="radio" name="meal" value="匠滷控肉飯100"/>匠滷控肉飯100</label>
+                <label><input type="radio" name="meal" value="紐澳良烤雞腿飯95"/>紐澳良烤雞腿飯95</label>
+                <label><input type="radio" name="meal" value="雞排飯115"/>雞排飯115</label>
+            </div> <div class="con" style="flex-direction: column;">
+                <div class="e" id="enum" style="color: red; margin-bottom: 5px;">ㄟ你忘記了</div>
+                <input id="text" type="text" placeholder="座號(別班的打名字)" autocomplete="off" autocorrect="off" autocapitalize="off" >
+            </div>
+
+            <div class="con">
+                <button type="reset" id="restart">重置表單</button>
+                <button type="submit" id="sub" style="color: blue;">提交表單</button>  
+            </div>
+        </form>
+    </div>
+    <dialog id="dialog" >
+        <div id="con"><img src="images/QA6.png"></div>
+        <button style="border-radius: 15px; display: block; width: 80px;height: 30px;background-color:rgb(241, 125, 125);margin: 10px auto 10px auto;" id="close">我知道了</button>
+    </dialog>
+    <div id="animation" style="display: none;">
+        <div class="ani-box">
+            <h1>表單送出</h1>
+            <dotlottie-wc
+                src="images/orderAnimation.lottie"
+                style="transform: scale(3);margin-top: 100px;"
+                autoplay
+                loop>
+            </dotlottie-wc>
+        </div>
+    </div>
+
+    <div id="container">
+        <button class="box" id="box1">主頁</button>
+        <button class="box" id="box2" style="height: 120px;">點餐</button>
+        <button class="box" id="box3">點餐紀錄</button>
+        <button class="box" id="box4">月曆</button>
+    </div>
+
+    <dotlottie-wc
+        id="animation_loading"
+        src="images/animation.lottie"
+        style="width: 420px;height: 480px;display: none;position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;"
+        autoplay
+        loop
+    ></dotlottie-wc>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="lunchbox.js"></script>
+</body>
+</html>

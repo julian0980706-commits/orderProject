@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canWrite</title>
+    <link rel="stylesheet" href="document.css"/>
+    <link rel="stylesheet" href="logout.css"/>
+    <link rel="stylesheet" href="canWrite.css"/>
+</head>
+    <body style="margin: 0; background-color: #fcfcfc;">
+        <div style="padding: 20px 0 200px 0;">
+            <table id="table">    
+                <tr>
+                    <th>小虎牛排</th>
+                    <td><input id="steak" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>成功燒臘</th>
+                    <td><input id="spicy" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>海苔捲</th>
+                    <td><input id="susi" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>木鱉果牛肉麵</th>
+                    <td><input id="beefnoodles" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>海南雞飯</th>
+                    <td><input id="southSeaChickenRice" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>竇爸</th>
+                    <td><input id="beanDad" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>悟饕</th>
+                    <td><input id="lunchbox" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>火雞肉飯</th>
+                    <td><input id="turkey" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>永樂燒肉飯</th>
+                    <td><input id="firemeat" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>紅樓</th>
+                    <td><input id="redBuilding" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>八方雲集</th>
+                    <td><input id="dumplings" type="checkbox"/></td>
+                </tr>    
+                <tr>
+                    <th>柴與咖哩</th>
+                    <td><input id="curry" type="checkbox"/></td>
+                </tr>  
+                
+            </table>
+            <div style="display: grid; margin: 0; position: relative;top: 60px;">
+            <button id="commit">儲存變更</button>
+            </div>
+        </div>
+    <dialog id="delarea"><!--特殊容器標籤 能夠獨立視窗 防止後面被點擊 預設display:none-->
+            <div style="height: 20px; margin: 0; text-align: center;">
+                <h2 style="font-size: 25px;margin: 0; position: relative;bottom: 7px;">儲存變更?</h2>
+            </div>
+            <div id="flexarea">
+                <button id="cancel">取消</button>
+                <button id="confirm">確定</button>
+            </div>      
+    </dialog>       
+    <div id="container">
+        <button class="box" id="box1" >資料庫</button>
+        <button class="box" id="box2" >日曆</button>
+        <button class="box" id="box3" style="height: 120px;">表單開關</button>
+        <button class="box" id="box4" >今日表單</button>
+    </div>
+    <button id="logOut">登出</button>
+    <script type="module" src="document.js"></script>
+    <script type="module" src="canWrite.js"></script>
+</body>
+</html>

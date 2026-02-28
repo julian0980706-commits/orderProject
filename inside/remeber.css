@@ -1,0 +1,91 @@
+/* 基礎設定：優化 iOS 體驗 */
+* {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent; /* 移除 iOS 點擊時的藍色預設高亮 */
+    box-sizing: border-box; /* 讓寬高計算更精準 */
+}
+
+table {
+    justify-self: center;
+    table-layout: fixed;
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #6a0dad; /* 飽和度高一點的深紫色 */
+    color: white;
+    border: solid 1px #ddd;
+    padding: 10px 0;
+}
+
+tr {
+    background-color: #fff9f0; /* 溫潤的米白色，文字閱讀較舒服 */
+    border: solid 1px #ddd;
+}
+
+#form_area {
+    padding-bottom: 150px;
+    padding-bottom: calc(150px + env(safe-area-inset-bottom)); /* 防 iOS 底部橫條遮擋 */
+}
+
+#delete {
+    justify-self: center;
+    background-color: #00ffd0; /* 更亮眼的青色 */
+    border-radius: 12px;
+    border: 1px solid black;
+    position: relative;
+    top: 30px;
+    transform: scale(1.5);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Dialog 本體樣式 */
+#delarea {
+    width: 250px; /* 寬度稍微拉開，讓標題不擁擠 */
+    height: 150px; /* 增加一點點高度給 Padding */
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+#flexarea {
+    margin: 0;
+    width: 100%; /* 適應父容器 */
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 配色優化：修正拼字並調整顏色質感 */
+#confirm { background-color: #06e89d; border: none; }
+#cancel { background-color: #ff4d4d; color: white; border: none; }
+
+#confirm, #cancel {
+    display: flex; /* 讓文字垂直水平置中 */
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* 高度微調更精緻 */
+    width: 90px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#delarea::backdrop {
+    background-color: rgba(0, 0, 0, 0.4); /* 遮罩深一點點，讓視窗更明顯 */
+    backdrop-filter: blur(3px); /* 模糊度提高一點點增加質感 */
+    -webkit-backdrop-filter: blur(3px);
+}
+
+/* 底部選單防 iOS 遮擋 */
+#container {
+    padding-bottom: env(safe-area-inset-bottom);
+}

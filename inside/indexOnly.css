@@ -1,0 +1,98 @@
+.hero-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+    width: 100%;
+}
+
+#hero-title {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ce0f95;
+    letter-spacing: 10px;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba(255,255,255,0.8), 5px 5px 15px rgba(0,0,0,0.1);
+    animation: title_fade 0.8s ease-out forwards;
+}
+
+@keyframes title_fade {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#guide_overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hide { display: none !important; }
+
+#guide_dialog {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90vw;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#window {
+    width: 100%;
+    aspect-ratio: 3/2 ; /* 維持比例 */
+    overflow: hidden;
+    border: 2px solid #5a4a6b;
+    border-radius: 10px;
+}
+
+/* Slide 基礎設定：預設不顯示 */
+.slide { 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.slide img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* 確保菜單圖片不變形且完整顯示 */
+}
+
+.prev, .next {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.3); color: white; padding: 10px;
+    cursor: pointer; user-select: none;
+    text-decoration: none;
+    z-index: 10;
+}
+.next { right: 0; }
+.prev { left: 0; }
+
+#document, #QA {
+    position: fixed; top: 25px;
+    font-size: 1.2rem; height: 80px; width: 80px;
+    border-radius: 40px; border: solid 2px #2c3e50;
+    background-color: rgb(237, 31, 52); font-weight: bold;
+    cursor: pointer;
+}
+#document { left: 25px; }
+#QA { right: 25px; }
+
+#close {
+    margin: 15px auto 0 auto;
+    display: block; width: 100px; height: 40px;
+    background-color: #ce0f95; color: white;
+    border: none; border-radius: 8px;
+    cursor: pointer;
+}
+*{
+    user-select: none;
+}

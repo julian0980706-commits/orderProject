@@ -1,0 +1,233 @@
+/* --- 保留原本設定，加入 iOS 強化與 Checkbox 排版 --- */
+
+body {
+    background: #1e3799; 
+    background: linear-gradient(135deg, #1e3799 0%, #000000 100%);
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    -webkit-text-size-adjust: 100%;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
+#op,#op1 {
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    margin: 7px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+h2 {
+    background-color: #eb2f06;
+    color: white;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+#op label,#op1 label {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #333;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #eee;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#op label input ,#op1 label input{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    accent-color: #eb2f06;
+    -webkit-appearance: radio; 
+}
+
+.con {
+    width: 90%;
+    height: auto;
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* 統一陰影 */
+}
+
+/* 針對 Checkbox 內文字的顏色確保與 Radio 一致 */
+.con label span {
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.con button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#restart { background-color: #b2bec3; color: white; }
+#sub { background-color: #eb2f06; color: blue; }
+#random{background-color: #2D6A4F; color: white; 
+    margin: 6px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+#text,#num {
+    height: 40px; 
+    width: 60vw;
+    border-radius: 5px;
+    border: solid black 1px;
+    font-size: 1.3rem; 
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    color: black;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.e { display: none; }
+
+#animation {
+    position: fixed;
+    top: 0px; left: 0px;
+    width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ani-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    bottom: 100px;
+}
+
+.ani-box h1 {
+    margin-bottom: 100px;
+    font-size: 2rem;
+    color: white;
+}
+/* Checkbox 專用容器修正 */
+.checkbox-group {
+    flex-direction: column !important; /* 強制換行 */
+    align-items: flex-start !important; /* 靠左對齊 */
+    padding: 20px 15% !important; /* 調整左邊距，讓它看起來居中 */
+    box-sizing: border-box;
+}
+
+.check-label {
+    display: flex;
+    align-items: center; /* 關鍵：讓方塊跟文字垂直居中對齊 */
+    width: 100%;
+    padding: 12px 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.check-label input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px; /* 方塊跟字的距離 */
+    flex-shrink: 0; /* 防止方塊被擠扁 */
+    -webkit-appearance: checkbox;
+    accent-color: #eb2f06;
+}
+
+.check-label span {
+    color: #333;
+    font-size: 1.4rem; /* 與 Radio 大小一致才不會歪 */
+    line-height: 1; /* 移除多餘行高 */
+}
+/* 修正 Checkbox 垂直置中與防縮小 */
+.con label {
+    display: flex !important;
+    align-items: center !important; /* 解決歪歪的問題 */
+    justify-content: flex-start !important;
+}
+
+.con label input[type="checkbox"] {
+    -webkit-appearance: checkbox !important; /* 強制 iOS 顯示 */
+    flex-shrink: 0 !important; /* 防止方塊被擠扁 */
+}
+
+/* 確保文字絕對是黑色的，不會因為繼承 body 而變白字（導致消失） */
+.con label span {
+    color: #333 !important;
+    white-space: nowrap; /* 防止字被擠到下一行 */
+}
+/* --- 放大 select 並補回藍色小箭頭 --- */
+select {
+    width: 40vw;
+    height: 45px;
+    font-size: 30px; /* 針對 iOS 防縮放 */
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: white;
+    color:black;
+    padding: 0 35px 0 10px; /* 右邊預留空間放箭頭，防止文字壓到它 */
+    cursor: pointer;
+
+    /* 關鍵：強制去掉預設樣式，改用自定義背景圖 */
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* 畫出藍色箭頭 (使用內聯 SVG) */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e3799'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 5px center; /* 距離右邊 10px，垂直置中 */
+    background-size: 40px; /* 箭頭大小 */
+}
+
+/* 針對 IE/Edge 的特殊修正 */
+select::-ms-expand {
+    display: none;
+}
+/* 針對圖片區下方的輸入框微調 */
+#img_note {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    background-color: #f9f9f9 !important; /* 稍微深一點點跟座號框做區隔 */
+    box-sizing: border-box;
+}
+
+#img_note:focus {
+    border: 1px solid #eb2f06; /* 聚焦時變成主題紅 */
+}
+#op1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
