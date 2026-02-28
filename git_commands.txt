@@ -1,8 +1,10 @@
+git 追蹤的是檔案的變化
+
 git config --list 查看設定
 git config --global user.name "(userName)"	
 git config --global user.name "(e-mail)"	
 git init
-git status
+git status 檢查所有狀態
 git add filename
 git add . 將全部工作區檔案移去暫存區(還沒存) 除了ignore裡的
 
@@ -25,7 +27,9 @@ HEAD是現在位置
 master是指最新
 git checkout 版本號 時空跳轉到版本
 git checkout master(回到最新)
-git checkout 版本號 my.txt (將檔案改成那時候的狀態，且自動幫忙add)!!不改變HEAD改變了工作區和暫存
-git checkout -- my.txt (回到最近一次存檔(add or commit)的位置 )
+git checkout 版本號 my.txt  (將檔案改成那時候的狀態，且自動幫忙add)!!不改變HEAD改變了工作區和暫存
+git checkout -- my.txt //git restore my.txt(回到最近一次存檔(add or commit)的位置 )
 git checkout -- .(回到最近一次存所有檔(add or commit)的位置)
 git reset --hard 版本號 (等於時空跳轉而且把跳轉到的時空之後的東西都刪掉)
+
+git push把資料拿下來
