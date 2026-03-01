@@ -33,3 +33,4 @@ git checkout -- .(回到最近一次存所有檔(add or commit)的位置)
 git reset --hard 版本號 (等於時空跳轉而且把跳轉到的時空之後的東西都刪掉)
 
 git push把資料拿下來
+git pull有專案抓別人的更新
