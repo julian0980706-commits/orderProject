@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         y=4+rnumY
     }
     else if(rnumS===2){
-        y=48-15*whBe
+        y=43-15*whBe
         x=10+rnumX
     }
     else if(rnumS===3){
@@ -85,13 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
         //碰撞邏輯
         //撞到哪邊的邊界 x/y其中之一變號
         let i=0
-        if(x>0&&x<85&&y>0&&y<48-15*whBe){
+        if(x>0&&x<85&&y>0&&y<43-15*whBe){
             change=true //防止震動
         }
         if(x<=0||x>=85){
             i+=3
         }
-        if(y<=0||y>=48-15*whBe){
+        if(y<=0||y>=43-15*whBe){
             i--
         }
         if(i==-1){
