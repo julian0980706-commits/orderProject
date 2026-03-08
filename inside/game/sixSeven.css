@@ -1,0 +1,22 @@
+#outDiv{
+    border: 1px black solid;
+    width:99.99vw;height:70vh;
+    box-sizing: border-box; position: absolute;top:15vh; 
+    margin-left: auto;margin-right: auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.box{
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box; /* 讓邊框算在寬度內 */
+    margin: 0;
+    width: 24.9vw;height: 13.99vh;
+    border: solid black 0.5px;
+
+}

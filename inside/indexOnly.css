@@ -84,8 +84,8 @@
     background-color: rgb(237, 31, 52); font-weight: bold;
     cursor: pointer;
 }
-#document { left: 25px; }
-#QA { right: 25px; }
+#document { left: 25px; z-index: 9999;}
+#QA { right: 25px; z-index: 9999;}
 
 #close {
     margin: 15px auto 0 auto;

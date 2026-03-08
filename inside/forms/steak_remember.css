@@ -6,11 +6,11 @@
 }
 
 /* 保持你原本的名稱，不動它 */
-#table_area {
+#form_area {
+    margin-bottom: 150px !important;
     width: 100%;
     display: block; 
-    /* 這裡設定 150px 留白，如果還是不夠滑再往加 */
-    padding-bottom: calc(150px + env(safe-area-inset-bottom)); 
+    /* 這裡設定 150px 留白，如果還是不夠滑再往加 */ 
     overflow: visible; /* 確保內容不會被切掉 */
 }
 
