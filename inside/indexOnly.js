@@ -8,6 +8,13 @@
     if判斷是判斷是否為truthy
  */
 //localStorage.removeItem("hasVisited_v1")
+const nowTime= new Date()
+const heroTitle=document.getElementById("hero-title")
+if(nowTime.getHours()<=12){
+    heroTitle.innerText="今天午餐"
+}
+document.querySelector('.hero-title-container').style.display="flex"
+
 let whBe=window.innerWidth/window.innerHeight//螢幕長寬比
 document.addEventListener("DOMContentLoaded", () => {
     let hasVisited = localStorage.getItem("hasVisited_v1");

@@ -70,5 +70,6 @@ const orderRef_bytime=query(orderRef,
         <th>總數</th>
         <td>${i}份</td>
     </tr>`
+    table.scrollIntoView({behavior:"smooth"});
 }
 getOrder()
