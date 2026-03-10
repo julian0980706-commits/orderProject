@@ -231,3 +231,9 @@ select::-ms-expand {
     align-items: center;
     justify-content: center;
 }
+#deleteOrder{
+    justify-self: center;
+    width: 100px;height: 40px;
+    background-color: rgb(255, 8, 8,0.7);
+    border-radius: 30px;
+}

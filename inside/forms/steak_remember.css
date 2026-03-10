@@ -109,3 +109,67 @@ tr {
     font-size: 1.1rem;
     font-weight: bold;
 }
+#deleteOrder{
+    justify-self: center;
+    width: 100px;height: 40px;
+    background-color: rgb(255, 8, 8,0.7);
+    border-radius: 30px;
+}
+#delarea {
+    width: 90dvw; /* 寬度稍微拉開，讓標題不擁擠 */
+    height: 25dvh; /* 增加一點點高度給 Padding */
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+#flexarea {
+    position: relative;bottom: -60px;
+    margin: 0;
+    width: 100%; /* 適應父容器 */
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#confirm { background-color: #06e89d; border: none; }
+#cancel { background-color: #ff4d4d; color: white; border: none; }
+#confirm, #cancel {
+    display: flex; /* 讓文字垂直水平置中 */
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* 高度微調更精緻 */
+    width: 90px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#delarea::backdrop {
+    background-color: rgba(0, 0, 0, 0.4); /* 遮罩深一點點，讓視窗更明顯 */
+    backdrop-filter: blur(3px); /* 模糊度提高一點點增加質感 */
+    -webkit-backdrop-filter: blur(3px);
+}
+#QA{
+    position: absolute; top: 15px;right: 25px;
+    font-size: 1.2rem; height: 60px; width: 60px;
+    border-radius: 30px; border: solid 2px #2c3e50;
+    background-color: rgb(237, 31, 52); font-weight: bold;
+    cursor: pointer;
+}
+#dialog{
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90vw;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+#con{
+    width: 100%;
+    aspect-ratio: 5/4 ; /* 維持比例 */
+    overflow: hidden;
+    border: 2px solid #5a4a6b;
+    border-radius: 10px;
+}

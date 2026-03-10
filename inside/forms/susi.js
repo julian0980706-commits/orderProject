@@ -44,6 +44,14 @@ if(ifShow.show==true){
     const orderRef=collection(db,"forms","susi","susi",)
     const myForm=document.getElementById("form")
     const submit_btn=document.getElementById("sub")
+    document.getElementById("form").addEventListener("reset",()=>{
+        error_deal()
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    })
     const handleSubmit=async(e)=>{
         e.preventDefault(); //使網站不執行預設動作 (使他不refresh得以先執行函式內的動作)
         const num =document.querySelector('#text').value
@@ -78,6 +86,7 @@ if(ifShow.show==true){
             submit_btn.innerText="傳送中"
             await addDoc(orderRef,total)
             //傳完才執行下面
+            localStorage.setItem("susi", num);
             submit_btn.innerText="送出訂單"
             main.style.display="none"
             animation.style.display="flex"

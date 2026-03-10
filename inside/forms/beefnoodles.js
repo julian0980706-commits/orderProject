@@ -99,6 +99,15 @@ if(ifShow.show==true){
         document.getElementById("text").scrollIntoView({behavior:"smooth"})
         items[itemIndex].dispatchEvent(new Event('change'));
     })
+    document.getElementById("form").addEventListener("reset",()=>{
+        document.getElementById("selection_container").style.display="none"
+        error_deal()
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    })
     const orderRef=collection(db,"forms","beefnoodles","beefnoodles",)
     const myForm=document.getElementById("form")
     const submit_btn=document.getElementById("sub")
@@ -148,6 +157,7 @@ if(ifShow.show==true){
             submit_btn.innerText="傳送中"
             await addDoc(orderRef,total)
             //傳完才執行下面
+            localStorage.setItem("beefnoodles", num);
             submit_btn.innerText="送出訂單"
             main.style.display="none"
             animation.style.display="flex"

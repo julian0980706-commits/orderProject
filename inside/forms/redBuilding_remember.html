@@ -33,11 +33,13 @@
 </head>
 <body style="margin: 0px;"> <!--因為瀏覽器預設margin是8:(-->
     <div id="form_area" style="display: none;">
+        <button id="QA">指南</button>
         <h1 style="text-align: center;">紅樓</h1>
         <div class="image-display-area" id="meal_image_container">
             <img src="images/redBuilding.jpg" alt="餐點圖片">
         </div>
         <table id="sum"></table>
+        <div style="display: flex; justify-content: center;"><button id="deleteOrder">刪除點餐紀錄</button></div>
         <table id="table">
             <thead>
                 <th>座號</th>
@@ -64,6 +66,21 @@
         <button class="box" id="box3" style="height: 120px;">點餐紀錄</button>
         <button class="box" id="box4" >月曆</button>
     </div>
+    <dialog id="dialog" >
+        <div id="con"><img src="images/remember.png"></div>
+        <button style="border-radius: 15px; display: block; width: 80px;height: 30px;background-color:rgb(241, 125, 125);margin: 10px auto 10px auto;" id="close">我知道了</button>
+    </dialog>
+    <dialog id="delarea"><!--特殊容器標籤 能夠獨立視窗 防止後面被點擊 預設display:none-->
+            <div style="display: flex;flex-direction: column ;width: 100%;height: 100%;margin: 0;align-items: center;">
+                <div style="height:auto;width: 100%; margin: 10px; text-align: center;">
+                        <h2 id="ensureText" style="font-size: 25px;margin: 0;position: absolute;top:2rem;text-align: center;"></h2>
+                </div>
+                <div id="flexarea">
+                    <button id="cancel">取消</button>
+                    <button id="confirm">確定</button>
+                </div>  
+            </div>    
+    </dialog>
     <script type="module" src="redBuilding_remember.js"></script>
     <script type="module" src="index.js"></script>
 </body>

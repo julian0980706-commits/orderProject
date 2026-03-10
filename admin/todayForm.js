@@ -22,7 +22,6 @@ for (let store of stores){
     }
 }
 confirm.disabled=false
-
 commit.addEventListener("click",()=>{
     delarea.showModal()
     cancel.addEventListener("click",()=>{delarea.close()})
