@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs ,query,orderBy,updateDoc,where} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs ,query,orderBy,updateDoc,where,getDoc,doc} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 //gatdocs取得資料 query orderBy排序資料用
 import{db}from"./config.js"
 let myNumber = localStorage.getItem("beanDad");
@@ -20,6 +20,19 @@ const orderRef_bytime=query(orderRef,
     form_area.style.display="none"
     const animation=document.getElementById("animation")
     animation.style.display="block"  
+    let ifShow
+    try{
+        ifShow= await getDoc(doc(db,"forms","beanDad"))
+    }
+    catch(e){
+        console.error(e); // 點開這個錯誤看裡面有沒有網址
+        alert("網路不穩，請稍後在試")
+    }
+    console.log(ifShow)
+    if(ifShow.data().show!=true){
+        document.getElementById("QA").style.display="none"
+        document.getElementById("deleteOrder").style.display="none"
+    }
     try{
         all_orders= await getDocs(orderRef_bytime)
     }
