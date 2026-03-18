@@ -118,12 +118,15 @@ const orderRef_bytime=query(orderRef,
     for(let name in mealcounter){//注意!for in只會跑一層index
         for(let insid_name in mealcounter[name]){
            for(let insid_inside_name in mealcounter[name][insid_name]){
-            sum.innerHTML+=`
-            <tr>
-                <th>${insid_name+name+insid_inside_name}顆</th>
-                <td>${mealcounter[name][insid_name][insid_inside_name]}份</td>
-            </tr>
-            `
+            if(insid_name+name+insid_inside_name){
+                sum.innerHTML+=`
+                <tr>
+                    <th>${insid_name+name+insid_inside_name}顆</th>
+                    <td>${mealcounter[name][insid_name][insid_inside_name]}份</td>
+                </tr>
+                `
+            }
+            
            } 
         }
     }

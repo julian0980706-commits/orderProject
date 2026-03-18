@@ -2,8 +2,7 @@ const index= document.getElementById("index")
 const start= document.getElementById("start")
 const gameArea= document.getElementById("gameArea")
 const timer= document.getElementById("timer")
-const stratBtn= document.getElementById("start")
-const smallTitle= document.getElementById("smallTitle")
+const title=document.getElementById("title")
 //管一整排的大div
 let Row_1=document.getElementById("First")
 let Row_2=document.getElementById("Second")
@@ -29,48 +28,29 @@ let rnum5=[]
 let rnum_6=[]
 let allRows=[rnum1,rnum2,rnum3,rnum4,rnum5,rnum_6]//二維陣列
 let sixHaveBeenClicked=false//控制67邏輯
-let canClick=false//在移動中禁止任何事情
+let canClick=true//在移動中禁止任何事情
 let firstPlay=true
 let timerId//計時器停止用
 let lastTimeImage=[]//撕標籤方便
 let righOrLeft//決定6在左或右的 0或1
-let timeUp//檢查死亡原因
-let diff
-let score=0//計算得分
 
 const endGame=(e)=>{
     //加有動畫的class
-    if(timeUp){
+    e.target.classList.add("flash")
+    canClick=false
+    setTimeout(()=>{
         for (let element of RandomRows) {
             element.classList.add("no-transition"); // 拔掉動畫，避免它慢慢滑回去
             element.style.transform = "translateY(-13.99dvh)"; // 強制歸位到最上方
         }
         index.style.display="flex"
-        smallTitle.style.display="block"
-        smallTitle.innerText="Time's up"
-        stratBtn.innerText="再玩一次"
-        title.innerText=`得分:${score}`
-    }
-    else{
-        e.target.classList.add("flash")
-        canClick=false
-        setTimeout(()=>{
-            for (let element of RandomRows) {
-                element.classList.add("no-transition"); // 拔掉動畫，避免它慢慢滑回去
-                element.style.transform = "translateY(-13.99dvh)"; // 強制歸位到最上方
-            }
-            index.style.display="flex"
-            e.target.classList.remove("flash")
-            clearInterval(timerId)
-            smallTitle.style.display="none"
-            stratBtn.innerText="再玩一次"
-            title.innerText=`得分:${score}`
-        },910)
-    }
+        gameArea.style.display="none"
+        e.target.classList.remove("flash")
+        clearInterval(timerId)
+    },910)
 }
 const sixMove=(e)=>{
     if(canClick){
-        score++
         //e.target就是被按的東西
         e.target.classList.add("sixClick")
         e.target.innerText=""
@@ -80,7 +60,6 @@ const sixMove=(e)=>{
 //7的移動
 const clickRandom=()=>{
     if(canClick){
-        score++
         if(sixHaveBeenClicked){
             //先讓整排慢慢掉下去
             for(let element of RandomRows){
@@ -112,12 +91,6 @@ const clickRandom=()=>{
                 let randomnum=[0,1,2,3]
                 randomnum.splice(Math.floor(Math.random()*4),1)
                 randomnum.splice(Math.floor(Math.random()*3),1)
-                let righOrLeft=Math.floor(Math.random()*2)
-                if(righOrLeft==1){
-                    randomnum.push(randomnum[1])
-                    randomnum.push(randomnum[0])
-                    randomnum.splice(0,2)
-                }
                 rnum1=randomnum
                 //畫出來
                 for(let element of randomRows){
@@ -134,21 +107,32 @@ const clickRandom=()=>{
                     //移動
                     allRows[0]=rnum1
                     righOrLeft=Math.floor(Math.random()*2)
-                    element[allRows[j][0]].innerText=`6`
-                    element[allRows[j][1]].innerText=`7`
-                    //randomColor
-                    element[allRows[j][0]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
-                    element[allRows[j][1]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
-                    if(j==4){
-                    element[allRows[4][1]].addEventListener("click",clickRandom)
-                    element[allRows[4][0]].addEventListener("click",sixMove)
+                    if(righOrLeft==0){
+                        element[allRows[j][0]].innerText=`6`
+                        element[allRows[j][1]].innerText=`7`
+                        //randomColor
+                        element[allRows[j][0]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
+                        element[allRows[j][1]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
+                        if(j==4){
+                        element[allRows[4][1]].addEventListener("click",clickRandom)
+                        element[allRows[4][0]].addEventListener("click",sixMove)
+                        }
+                    }
+                    else{
+                        element[allRows[j][1]].innerText=`6`
+                        element[allRows[j][0]].innerText=`7`
+                        //randomColor
+                        element[allRows[j][1]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
+                        element[allRows[j][0]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
+                        if(j==4){
+                        element[allRows[4][0]].addEventListener("click",clickRandom)
+                        element[allRows[4][1]].addEventListener("click",sixMove)
+                    }
                     }
                     for(let c=0;c<4;c++){
                             //空白結束遊戲
-                            if(c!=allRows[j][0]&&c!=allRows[j][1]){
-                                timeUp=false
-                                element[c].addEventListener("click",endGame)
-                            }
+                            if(c!=allRows[j][0]&&c!=allRows[j][1])
+                            element[c].addEventListener("click",endGame)
                     }
                     if(j==5){
                         for(d of lastTimeImage){
@@ -211,7 +195,7 @@ const randomBox=()=>{
                 element[randomnum[1]].innerText=`7`
                 element[randomnum[0]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
                 element[randomnum[1]].style.color=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)})`
-            }   
+            }
             else{
                 if(j==4){element[randomnum[0]].addEventListener("click",clickRandom)}//移動
                 if(j==4){element[randomnum[1]].addEventListener("click",sixMove)}//移動
@@ -227,22 +211,14 @@ const randomBox=()=>{
         }
     }  
 }
-const start_game=()=>{
-    score=0
-    canClick=true
+start.addEventListener("click",()=>{
     timer.innerText="20.00"
     //計時器
     let startTime=Date.now()
     timerId = setInterval(()=>{
         let currentTime=Date.now()
-        diff = (20000-currentTime +startTime) / 1000; // 算出秒數差 並把毫秒/1000
+        let diff = (20000-currentTime +startTime) / 1000; // 算出秒數差 並把毫秒/1000
         timer.innerText =diff.toFixed(2) + "s"; // 把數字轉成字串，並強制顯示到小數點後兩位
-        if(diff.toFixed(2)<=0){
-            timer.innerText="0.00s"
-            timeUp=true
-            clearInterval(timerId)//防重複呼叫
-            endGame()
-        }
     },30)
     sixHaveBeenClicked=false
     index.style.display="none"
@@ -261,21 +237,10 @@ const start_game=()=>{
                 element[i].removeEventListener("click",endGame) 
             }
         }
-        randomBox()//避免第一次玩隨機兩次
-        document.querySelectorAll('.sixSevenKid').forEach((element)=>{
-            element.classList.remove("sixSevenKid")
-        })
-        document.querySelectorAll('.sixClick').forEach((element)=>{
-            element.classList.remove("sixClick")
-        })
     }
-    
     firstPlay=false
-    
-}
-start.addEventListener("click",start_game)
-randomBox()
-//一開始先背景是隨機的
+    randomBox()
+})
 
 
     

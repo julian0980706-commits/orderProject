@@ -1,22 +1,114 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 這一行最重要：防止任何東西撐大頁面 */
+}
+
 #outDiv{
-    border: 1px black solid;
-    width:99.99vw;height:70vh;
-    box-sizing: border-box; position: absolute;top:15vh; 
+    border: solid 0.3px rgb(162, 162, 242);
+    width:99.99dvw;height:69.99dvh;
+    box-sizing: border-box; position: absolute;top:10dvh; 
     margin-left: auto;margin-right: auto;
     overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
 }
 .box{
-    font-size: xx-large;
+    font-size: 15dvw;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     box-sizing: border-box; /* 讓邊框算在寬度內 */
     margin: 0;
-    width: 24.9vw;height: 13.99vh;
-    border: solid black 0.5px;
-
+    width: 24.9dvw;height: 13.99dvh;
+    border: solid 0.3px rgb(162, 162, 242);
 }
+/*移動整排div後再瞬間歸位 以實現動畫感*/
+#First, #Second, #Third, #Fourth, #Fifth,#Sixth {
+    transform: translateY(-13.99dvh);/*預設往上一排 把第一排藏起來*/
+    width:99.99dvw ;height: 13.99dvh;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: space-around;
+    /*transition當指定屬性改變時，讓其慢慢改變*/
+    /* 當 transform (位移) 改變時，請花 0.1 秒慢慢滑過去 */
+    transition: transform 0.1s ease-in-out;
+    /* 確保 div 是一個塊狀，移動才明顯 */
+}
+/*拔transition 使用時把元素加進這個class就好了*/
+.no-transition {
+    transition: none !important; /* 強制拔掉所有動畫效果 */
+}
+
+#start{
+    width: 50dvw;
+    height: 30dvw;
+    color: white;
+    background-color: rgb(239, 88, 88);
+    border-radius: 5dvw;
+    font-size: 10dvw;
+}
+#index{
+    width:60dvw ;
+    height: 50dvh;
+    background-color: pink;
+    position: fixed; /* 讓它釘死在螢幕上，不被任何東西推擠 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 999;
+    border-radius: 20px;
+    border: solid 1px red;
+}
+
+/*死亡那格閃紅燈的動畫*/
+@keyframes flashLight{
+    0% { background-color: transparent; }/*original color*/
+    50% { background-color: rgba(255, 0, 0, 0.8); } /* 紅色半透明 */
+    100% { background-color: transparent; }
+}
+
+.flash{
+    animation-name: flashLight;
+    animation-duration: 0.3s;/*持續時間*/
+    animation-timing-function: ease-in-out;/*速度曲線 中間較快*/
+    animation-iteration-count: 3;
+    animation-delay: 0s;           /* 延遲多久才開始 */
+}
+
+/*圖片用換class的方式顯示*/
+.sixSevenKid{
+    /* 1. 設定圖片路徑 */
+    background-image: url('../forms/images/sixSevenKid.png');
+
+    /* 2. 關鍵：確保整張圖都看得到 */
+    background-size: contain;
+
+    /* 3. 關鍵：確保圖片在格子正中央 */
+    background-position: center;
+
+    /* 4. 防止圖片因為格子太大而像磁磚一樣重複出現 */
+    background-repeat: no-repeat;
+}
+
+.sixClick{
+     /* 1. 設定圖片路徑 */
+    background-image: url('../forms/images/six.png');
+
+    /* 2. 關鍵：確保整張圖都看得到 */
+    background-size: contain;
+
+    /* 3. 關鍵：確保圖片在格子正中央 */
+    background-position: center;
+
+    /* 4. 防止圖片因為格子太大而像磁磚一樣重複出現 */
+    background-repeat: no-repeat;
+}
+*{user-select: none;}
+
+

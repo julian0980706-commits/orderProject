@@ -7,32 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>67</title>
     <link rel="stylesheet" href="sixSeven.css">
+    <link rel="stylesheet" href="../index.css">
 </head>
 <body style="margin: 0;">
-    <div id="outDiv">
-        <!--用空格寫不同的class-->
-        <div class="box first"></div>
-        <div class="box first"></div>
-        <div class="box first"></div>
-        <div class="box first"></div>
-        <div class="box second"></div>
-        <div class="box second"></div>
-        <div class="box second"></div>
-        <div class="box second"></div>
-        <div class="box third"></div>
-        <div class="box third"></div>
-        <div class="box third"></div>
-        <div class="box third"></div>
-        <div class="box fourth"></div>
-        <div class="box fourth"></div>
-        <div class="box fourth"></div>
-        <div class="box fourth"></div>
-        <div class="box fifth"></div>
-        <div class="box fifth"></div>
-        <div class="box fifth"></div>
-        <div class="box fifth"></div>
+    <div id="index" style="display: flex; flex-direction: column;align-items: center;justify-content: space-evenly;">
+        <h1 style="font-size: 15dvw; color: rgb(74, 56, 212);" id="title">67遊戲</h1>
+        <h1 id="smallTitle">先點6 再點7</h1>
+        <button id="start">開始遊戲</button>
     </div>
-
+    
+    <div id="gameArea">
+        <h1 style="color: rgb(0, 0, 0);text-align: center;font-size: 10dvw;" id="timer">20.00s</h1>
+        <div id="outDiv">
+            <!--用空格寫不同的class-->
+            <div id="First">
+                <div class="box first"></div>
+                <div class="box first"></div>
+                <div class="box first"></div>
+                <div class="box first"></div>
+            </div>
+            <div id="Second">
+                <div class="box second"></div>
+                <div class="box second"></div>
+                <div class="box second"></div>
+                <div class="box second"></div>
+            </div>
+            <div id="Third">
+                <div class="box third"></div>
+                <div class="box third"></div>
+                <div class="box third"></div>
+                <div class="box third"></div>
+            </div>
+            <div id="Fourth">
+                <div class="box fourth"></div>
+                <div class="box fourth"></div>
+                <div class="box fourth"></div>
+                <div class="box fourth"></div>
+            </div>
+            <div id="Fifth">
+                <div class="box fifth"></div>
+                <div class="box fifth"></div>
+                <div class="box fifth"></div>
+                <div class="box fifth"></div>
+            </div>
+            <div id="Sixth">
+                <div class="box sixth"></div>
+                <div class="box sixth"></div>
+                <div class="box sixth"></div>
+                <div class="box sixth"></div>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <button class="Box" id="box1">主頁</button>
+        <button class="Box" id="box2">點餐</button>
+        <button class="Box" id="box3">點餐紀錄</button>
+        <button class="Box" id="box4">月曆</button>
+    </div>
     <script src="sixSeven.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
