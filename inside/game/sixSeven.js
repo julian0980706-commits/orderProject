@@ -196,7 +196,7 @@ const clickRandom = () => {
                     const clickedSix = document.querySelector('.sixClick');
                     if (clickedSix) clickedSix.classList.remove("sixClick");
                 }
-            }, 60)
+            }, 30)
         }
     }
 }

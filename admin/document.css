@@ -131,6 +131,7 @@ td{
 #turkey { background-color: #dfe6e9; }
 #beefnoodles { background-color: #badc58; }
 #dumplings { background-color: #f9ca24; }
+#meatball { background-color: #ff7070; }
 
 @keyframes lay_in {
     from { opacity: 0; }

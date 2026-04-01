@@ -36,8 +36,8 @@ deleteBtn.addEventListener("click",async()=>{
 
 const b = ["spicy", "curry" ,"lunchbox", "beanDad", "susi" ,"redBuilding","beefnoodles"]
 const B = ["成功燒臘", "柴與咖哩", "悟饕", "竇爸", "岩海苔飯捲", "紅樓","木鱉果牛肉麵"]
-const c = ["southSeaChickenRice", "turkey", "firemeat"]
-const C = ["海南雞飯", "火雞肉飯", "永樂燒肉飯"]
+const c = ["southSeaChickenRice", "turkey", "firemeat","meatball"]
+const C = ["海南雞飯", "火雞肉飯", "永樂燒肉飯","蝦仁肉圓"]
 
 b.forEach((store, index) => {
     document.getElementById(store).addEventListener("click", async () => {

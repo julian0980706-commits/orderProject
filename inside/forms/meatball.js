@@ -1,7 +1,7 @@
 import {  collection, addDoc,getDoc ,doc} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import{db} from "./config.js"
 //確認是否顯示 拿取單一文件(getdoc)
-const docRef=doc(db,"forms","turkey")
+const docRef=doc(db,"forms","meatball")
 let ifShow
 //loading
 const animation_loading=document.getElementById("animation_loading")
@@ -36,7 +36,7 @@ if(ifShow.show==true){
     const animation=document.getElementById("animation")
     document.getElementById("random").addEventListener("click",async(e)=>{
         e.preventDefault();
-        const items= document.querySelectorAll('input[name=meal]')
+        const items= document.querySelectorAll('input[name=extra]')
         let itemIndex= Math.floor(Math.random()*items.length)
         items[itemIndex].checked=true
         const error_input=document.getElementsByClassName("e")
@@ -47,6 +47,7 @@ if(ifShow.show==true){
         document.getElementById("text").scrollIntoView({behavior:"smooth"})
     })
     //取得紅字區
+    const extra_area=document.getElementById("extra")
     const emeal =document.getElementById("emeal")
     const error_num=document.getElementById("enum")
     const error_input=document.getElementsByClassName("e")
@@ -56,13 +57,15 @@ if(ifShow.show==true){
         }
     }
     //取得area
-    const op_area =document.getElementById("op")
+    extra_area.addEventListener("input",error_deal)
     const text_area=document.getElementById("text")
-    const sidedish_area=document.getElementById("sidedish")
     text_area.addEventListener("input",error_deal)
-    op_area.addEventListener("change",error_deal)
-    //
-    const orderRef=collection(db,"forms","turkey","turkey",)
+
+    //只能輸數字
+    document.getElementById("extra").addEventListener("input",(e)=>{
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    })
+    const orderRef=collection(db,"forms","meatball","meatball",)
     const myForm=document.getElementById("form")
     const submit_btn=document.getElementById("sub")
     document.getElementById("form").addEventListener("reset",()=>{
@@ -73,11 +76,12 @@ if(ifShow.show==true){
             behavior: "smooth"
         });
     })
+    //只能輸數字
     const handleSubmit=async(e)=>{
         e.preventDefault(); //使網站不執行預設動作 (使他不refresh得以先執行函式內的動作)
         const num =document.querySelector('#text').value
-        const meal=document.querySelector('input[name="meal"]:checked')
-        const extra=document.querySelector('#extra').value
+        const meal=document.querySelector('#extra').value
+        let extra=document.querySelector('input[name="extra"]:checked').value
         //確認使用者輸入
         if(!num){
             error_deal()
@@ -91,18 +95,18 @@ if(ifShow.show==true){
             emeal.scrollIntoView({behavior:"smooth"})//滾動到那裏(smoothly)
             return;
         }
-        if(meal.value=="我不要吃"&&!extra){
-            alert("不要惡作劇喔")
-            return;
-        }
         //準備傳送(建立物件)
+        if(!extra){
+            extra=""
+        }
         const total={
             num:num,
-            meal:meal.value,
-            extra:extra,
+            meal:meal,
             time:new Date(),
-            show:true
+            show:true,
+            extra:extra
         }
+        
         //嘗試傳送
         try{
             const container = document.getElementById("container");
@@ -113,13 +117,13 @@ if(ifShow.show==true){
             submit_btn.innerText="傳送中"
             await addDoc(orderRef,total)
             //傳完才執行下面
-            localStorage.setItem("turkey", num);
+            localStorage.setItem("meatball", num);
             submit_btn.innerText="送出訂單"
             main.style.display="none"
             animation.style.display="flex"
             animation.style.display="flex"
             container.style.display="none"
-            setTimeout(()=>{window.location.href="turkey_remember.html"},1200)
+            setTimeout(()=>{window.location.href="meatball_remember.html"},1200)
         }
         catch(error){
             alert("嗚嗚嗚，錯了")

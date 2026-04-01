@@ -20,7 +20,8 @@ const clickUrls={
     "海南雞飯":"forms/southSeaChickenRice.html",
     "八方雲集":"forms/dumplings.html",
     "柴與咖哩":"forms/curry.html",
-    "海苔飯捲":"forms/susi.html"
+    "海苔飯捲":"forms/susi.html",
+    "蝦仁肉圓":"forms/meatball.html",
 }
 //先把要的集合拿出來
 //loading animation
