@@ -76,12 +76,11 @@ if(ifShow.show==true){
             behavior: "smooth"
         });
     })
-    //只能輸數字
     const handleSubmit=async(e)=>{
         e.preventDefault(); //使網站不執行預設動作 (使他不refresh得以先執行函式內的動作)
         const num =document.querySelector('#text').value
         const meal=document.querySelector('#extra').value
-        let extra=document.querySelector('input[name="extra"]:checked').value
+        let extra=document.querySelector('input[name="extra"]:checked')
         //確認使用者輸入
         if(!num){
             error_deal()
@@ -98,6 +97,9 @@ if(ifShow.show==true){
         //準備傳送(建立物件)
         if(!extra){
             extra=""
+        }
+        else{
+            extra=extra.value
         }
         const total={
             num:num,
