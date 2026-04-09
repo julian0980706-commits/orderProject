@@ -18,7 +18,8 @@ const stores=[
     "steak",
     "susi",
     "turkey",
-    "southSeaChickenRice"
+    "southSeaChickenRice",
+    "meatball"
 ]
 const TorN=[]
 //for可以await forEach不行
