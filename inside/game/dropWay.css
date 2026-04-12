@@ -1,4 +1,22 @@
-#gameArae{
-    width: 100%;height: 66dvh;border: 1px black solid;box-sizing: border-box;
-    display: grid;
+#gameArea{
+    width: 100%;height: 76dvh;border: 1px black solid;box-sizing: border-box;
+    display: grid;/*?grid是一個特殊的容器 使之後放出來的東西按照切的格子排*/
+    grid-template-rows: repeat(9,1fr);/*?在橫向空間切10刀*/
+    grid-template-columns: repeat(6,1fr);/*?在直向空間切6刀*/
+}
+@keyframes flashLight{
+    0% { background-color: transparent; }/*original color*/
+    50% { background-color: rgba(255, 0, 0, 0.8); } /* 紅色半透明 */
+    100% { background-color: transparent; }
+}
+.flash{
+    animation-name: flashLight;
+    animation-duration: 0.3s;/*持續時間*/
+    animation-timing-function: ease-in-out;/*速度曲線 中間較快*/
+    animation-iteration-count: 3;
+    animation-delay: 0s;           /* 延遲多久才開始 */
+}
+.fall{
+    transform: translateY(500px);
+    transition: transform 1s linear;
 }
