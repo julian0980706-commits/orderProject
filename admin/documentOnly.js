@@ -351,3 +351,7 @@ document.getElementById("dumplings").addEventListener("click", async () => {
     document.getElementById("tb").innerHTML = text        
     deleteBtn.style.display = "block";
 })
+
+document.getElementById("bulletin").addEventListener("click",()=>{
+    window.location.href="bulletin.html"
+})

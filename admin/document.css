@@ -176,7 +176,7 @@ td{
 #box3 { background-color: #74b9ff; }
 #box4 { background-color: #ffeaa7; }
 
-#delarea {
+#delarea, #delarea2s {
     width: 250px;
     height: 150px;
     background-color: #ffffff;
@@ -186,7 +186,7 @@ td{
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-#flexarea {
+#flexarea, #flexarea2{
     margin: 0;
     width: 100%;
     height: 100px;
@@ -195,10 +195,10 @@ td{
     align-items: center;
 }
 
-#confirm { background-color: #06e89d; border: none; }
-#cancel { background-color: #ff4d4d; color: white; border: none; }
+#confirm, #confirm2{ background-color: #06e89d; border: none; }
+#cancel, #cancel2{ background-color: #ff4d4d; color: white; border: none; }
 
-#confirm, #cancel {
+#confirm, #cancel,#cancel2,#confirm2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,7 +210,7 @@ td{
     cursor: pointer;
 }
 
-#delarea::backdrop {
+#delarea::backdrop ,#delarea2::backdrop{
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);

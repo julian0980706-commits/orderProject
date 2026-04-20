@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑馬燈</title>
+    <link rel="stylesheet" href="logout.css"/>
+    <link rel="stylesheet" href="document.css"/>
+    <style>
+        #text{
+            width: 80dvw;height: 50dvh;
+            border: 1px solid black;
+            position: relative;
+            top: 15dvh;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;flex-direction: column; align-items: center;">
+        <textarea id="text"></textarea>
+        <button type="button" id="YES" style="z-index: 999; width: 30dvw;height: 5dvh;border: 1px greenyellow solid;border-radius: 5px;color: white;background-color: black;">確定</button>
+    </div>
+    
+        
+
+    <div id="container">
+        <button class="box" id="box1" style="height: 120px;">資料庫</button>
+        <button class="box" id="box2">日曆</button>
+        <button class="box" id="box3">表單開關</button>
+        <button class="box" id="box4">今日表單</button>
+    </div>
+    <button id="logOut" style="position: fixed; top: 10px; right: 10px; z-index: 1001;">登出</button>
+    <dialog id="delarea">
+        <div id="flexarea">
+            <button id="confirm">確定</button>
+            <button id="cancel">取消</button>
+        </div>
+    </dialog>
+    <dialog id="delarea2">
+        <div id="flexarea2">
+            <button id="confirm2">確定</button>
+            <button id="cancel2">取消</button>
+        </div>
+    </dialog>
+    <script type="module" src="document.js"></script>
+    <script type="module">
+        import { collection, getDoc ,updateDoc,doc,setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { db } from "./config.js";
+        const docRef=doc(db, "forms","bulletin")
+
+        const delarea2 = document.getElementById("delarea2")
+        const cancel2 = document.getElementById("cancel2")
+        const confirm2 = document.getElementById("confirm2")
+
+        let d= await getDoc(docRef)
+        d= d.data()
+        document.querySelector('#text').value=d.bulletin
+
+        document.getElementById("YES").addEventListener("click",()=>{
+            delarea2.showModal()
+        })
+        cancel2.addEventListener("click",()=>{delarea2.close()})
+        confirm2.addEventListener("click",()=>{
+            cancel2.disabled=false
+            let text=document.querySelector('#text').value
+            let f= async()=>{
+                try{    
+                    await updateDoc(docRef,{bulletin:text})    
+                    location.reload()
+                    cancel2.disabled=true
+                }
+                catch{alert("gg")}
+            }
+            f()
+        })
+    </script>
+</body>
+</html>

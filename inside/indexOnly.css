@@ -84,9 +84,37 @@
     cursor: pointer;
     z-index: 9999;
 }
-#document{position:fixed ;top: 25px;left: 10vw;}
-#QA{position:fixed ;top: 25px;right: 10vw;}
-#game{position:fixed ;top: 25px;right: 40vw;}
+#document{position:fixed ;top: 7dvh;left: 10vw;}
+#QA{position:fixed ;top: 7dvh;right: 10vw;}
+#game{position:fixed ;top: 7dvh;right: 40vw;}
+
+/*?跑馬燈*/
+@keyframes runTitle{
+    0% {
+        /*?transform照自己寬高*/
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+#textAreaContainer{
+    position: absolute;top :1dvh;
+    overflow: hidden;
+    height: 5dvh;
+    width: 100dvw;/*?一定要設不然可能被影響*/
+}
+#textArea{
+    padding-left: 100dvw;
+    white-space: nowrap;/*?文字不換行*/
+    display: inline-block;
+    font-size: x-large;
+    line-height: 5dvh;/*?確保文字高*/
+    animation: runTitle linear infinite;/*?linear等速*/
+    animation-duration: 0s;
+}
+
+
 #close {
     margin: 15px auto 0 auto;
     display: block; width: 100px; height: 40px;

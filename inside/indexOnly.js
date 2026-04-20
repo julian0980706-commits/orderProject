@@ -8,6 +8,18 @@
     if判斷是判斷是否為truthy
  */
 //localStorage.removeItem("hasVisited_v1")
+
+//*跑馬燈
+import { getFirestore,getDoc,doc} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import{db}from"./config.js"
+const docRef=doc(db,"forms","bulletin")
+let bulletin
+try{
+    bulletin = await getDoc(docRef)
+}
+catch{alert("網路不穩，請稍後在試")}
+bulletin= bulletin.data()
+bulletin=bulletin.bulletin
 const nowTime= new Date()
 const heroTitle=document.getElementById("hero-title")
 if(nowTime.getHours()<=12){
@@ -137,3 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(cubeRun)
     
 });
+//*跑馬燈
+let w= document.getElementById("textArea").offsetWidth
+w=w/window.innerWidth
+w*=100
+document.getElementById("textArea").innerText=bulletin
+document.getElementById("textArea").style.animationDuration=` ${(100+w)/22}s`
+
