@@ -150,3 +150,12 @@ const orderRef_bytime=query(orderRef,
         })
 }
 getOrder()
+
+//*跑馬燈
+const bulletinF=async()=>{
+    let w= document.getElementById("textArea").offsetWidth
+    w=w/window.innerWidth
+    w*=100
+    document.getElementById("textArea").style.animationDuration=` ${(100+w)/10}s`
+}
+bulletinF()

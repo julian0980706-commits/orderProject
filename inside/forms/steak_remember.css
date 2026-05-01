@@ -173,3 +173,42 @@ tr {
     border: 2px solid #5a4a6b;
     border-radius: 10px;
 }
+
+/*?跑馬燈*/
+@keyframes runTitle{
+    0% {
+        /*?transform照自己寬高*/
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+#textAreaContainer{
+    position: absolute;top :0dvh;
+    overflow: hidden;
+    height: 5dvh;
+    width: 100dvw;/*?一定要設不然可能被影響*/
+}
+#textArea{
+    color: rgb(224, 24, 224);
+    padding-left: 100dvw;
+    white-space: nowrap;/*?文字不換行*/
+    display: inline-block;
+    font-size: x-large;
+    line-height: 5dvh;/*?確保文字高*/
+    animation: runTitle linear infinite;/*?linear等速*/
+    animation-duration: 0s;
+}
+
+
+#close {
+    margin: 15px auto 0 auto;
+    display: block; width: 100px; height: 40px;
+    background-color: #ce0f95; color: white;
+    border: none; border-radius: 8px;
+    cursor: pointer;
+}
+*{
+    user-select: none;
+}
