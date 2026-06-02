@@ -19,7 +19,9 @@ const stores=[
     "susi",
     "turkey",
     "southSeaChickenRice",
-    "meatball"
+    "meatball",
+    "littleTom",
+    "police",
 ]
 const TorN=[]
 //for可以await forEach不行

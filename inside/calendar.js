@@ -22,6 +22,8 @@ const clickUrls={
     "柴與咖哩":"forms/curry.html",
     "海苔飯捲":"forms/susi.html",
     "蝦仁肉圓":"forms/meatball.html",
+    "小棠簡餐":"forms/littleTom.html",
+    "波力茶亭":"forms/police.html"
 }
 //先把要的集合拿出來
 //loading animation

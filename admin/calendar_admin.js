@@ -82,6 +82,8 @@ const drawCalandar=()=>{
                      <option value="紅樓">紅樓</option>
                      <option value="八方雲集">八方雲集</option>
                      <option value="蝦仁肉圓">蝦仁肉圓</option>
+                     <option value="波力茶亭">波力茶亭</option>
+                     <option value="小棠簡餐">小棠簡餐</option>
                      </select>  `
       
       if(nowNum>=7){

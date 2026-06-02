@@ -132,6 +132,8 @@ td{
 #beefnoodles { background-color: #badc58; }
 #dumplings { background-color: #f9ca24; }
 #meatball { background-color: #ff7070; }
+#littleTom { background-color: #9c1515; }
+#police { background-color: #05793d; }
 
 @keyframes lay_in {
     from { opacity: 0; }
