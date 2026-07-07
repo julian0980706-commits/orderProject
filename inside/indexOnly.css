@@ -77,17 +77,22 @@
 .next { right: 0; }
 .prev { left: 0; }
 
-#document, #QA,#game {
+#buttoncon{
+    position: fixed;top: 1dvh;left:0;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+}
+#document, #QA,#game,#setting {
     font-size: 1.2rem; height: 80px; width: 80px;
     border-radius: 40px; border: solid 2px #2c3e50;
     background-color: rgb(237, 31, 52); font-weight: bold;
     cursor: pointer;
     z-index: 9999;
 }
-#document{position:fixed ;top: 7dvh;left: 10vw;}
-#QA{position:fixed ;top: 7dvh;right: 10vw;}
-#game{position:fixed ;top: 7dvh;right: 40vw;}
-
+#QA{background-color: aqua;}
+#gaem{background-color: rgb(237, 233, 18)}
+#setting{background-color: aquamarine;}
 /*?跑馬燈*/
 @keyframes runTitle{
     0% {

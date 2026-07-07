@@ -82,7 +82,6 @@ document.addEventListener("DOMContentLoaded", async() => {
     moveCube.style.display="flex"
     moveCube.innerText=sixSeven[0]
     moveCube.style.willChange = 'transform';
-    let change=true
     let lasttime=0//紀錄時間差
     const cubeRun=(timestamp)=>{//timestamp特性 非常精確的紀錄當時時間 
         if(lasttime!=0){
@@ -94,14 +93,37 @@ document.addEventListener("DOMContentLoaded", async() => {
             y=y+Yspeed
         }
         lasttime=timestamp
-        moveCube.style.transform = `translate(${x}vw, ${y}vh)`;
         //碰撞邏輯
         //撞到哪邊的邊界 x/y其中之一變號
         let i=0
+        let change=false
         if(x>0&&x<85&&y>0&&y<40-15*whBe){
             change=true //防止震動
         }
-        if(x<=0||x>=85){
+        if(x<=0){
+            x=0;
+            Xspeed=-Xspeed
+        }
+        if(x>=85){
+            x=85;
+            Xspeed=-Xspeed
+        }
+        if(y<=0){
+            y=0;
+            Yspeed=-Yspeed
+        }
+        if(y>=40-15*whBe){
+            y=40-15*whBe;
+            Yspeed=-Yspeed
+        }
+        moveCube.style.transform = `translate(${x}vw, ${y}vh)`;
+        if(!change){
+            moveCube.style.backgroundColor=`rgb(${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.floor(Math.random()*250)},${Math.random()})`
+            if(j>1){j=0}
+            moveCube.innerText=sixSeven[j]
+            j++
+        }
+        /*if(x<=0||x>=85){
             i+=3
         }
         if(y<=0||y>=40-15*whBe){
@@ -137,7 +159,7 @@ document.addEventListener("DOMContentLoaded", async() => {
         }
         if(i!=0){
             change=false
-        }
+        }*/
         requestAnimationFrame(cubeRun)
     }
     requestAnimationFrame(cubeRun)

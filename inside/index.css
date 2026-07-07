@@ -68,7 +68,6 @@
 
 /* 5. 頂部紀錄按鈕也加個發光 */
 #document {
-    position: fixed; top: 25px; left: 25px;
     background-color: rgb(235, 102, 235);
     font-size: 1.2rem;
     height: 100px; 
