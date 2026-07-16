@@ -177,5 +177,5 @@ window.addEventListener('pageshow', function (event) {
         window.location.reload();
     }
 });
-
+document.querySelector('#text').value=localStorage.getItem("deflt");
 

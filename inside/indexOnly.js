@@ -181,4 +181,17 @@ const bulletinF=async()=>{
     document.getElementById("textArea").style.animationDuration=` ${(100+w)/22}s`
 }
 bulletinF()
+const text=document.getElementById("text")
+document.getElementById("setting").addEventListener("click",()=>{
+    document.getElementById("settingcon").style.display="flex";
+    let deflt=localStorage.getItem("deflt");
+    document.querySelector('#text').value = deflt
+})
+document.getElementById("settingCancel").addEventListener("click",()=>{
+    document.getElementById("settingcon").style.display="none"
+})
+document.getElementById("settingConfirm").addEventListener("click",()=>{
+    localStorage.setItem("deflt",document.querySelector('#text').value)
+    location.reload()
+})
     

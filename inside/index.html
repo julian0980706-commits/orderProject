@@ -49,6 +49,17 @@
         <button class="box" id="box3">點餐紀錄</button>
         <button class="box" id="box4">月曆</button>
     </div>
+    <div id="settingcon" style="display: none;">
+        <h1 style="color:white; text-align: center; font-size: 6dvh;position: relative;bottom: 7dvh;">設定</h1>
+        <div style="width: 100%;display: flex;">
+            <h2 style="color: white;position: absolute;left:3.5dvw">預設座號</h2>
+            <input id="text" type="text" placeholder="(點的時候也可以改)" autocomplete="off" autocorrect="off" autocapitalize="off" >
+        </div>
+        <div style="width: 100%; display: flex;justify-content: space-evenly;">
+            <button id="settingConfirm" style="width: 28dvw;height: 8dvh;background-color: greenyellow;border-radius: 10px;font-size: xx-large;color: white;">確定</button>
+            <button id="settingCancel" style="width: 28dvw;height: 8dvh;background-color: red;border-radius: 10px;font-size: xx-large;color: white;">取消</button>
+        </div>
+    </div>
     <script>
         const tomorrowLunch=document.getElementById("hero-title")
         const change=()=>{tomorrowLunch.style.color=`rgb(${Math.random()*250},${Math.random()*250},${Math.random()*250})`} 

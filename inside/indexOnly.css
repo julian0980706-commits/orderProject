@@ -78,7 +78,7 @@
 .prev { left: 0; }
 
 #buttoncon{
-    position: fixed;top: 1dvh;left:0;
+    position: fixed;top: 6dvh;left:0;
     width: 100%;
     display: flex;
     justify-content:space-around;
@@ -126,6 +126,32 @@
     background-color: #ce0f95; color: white;
     border: none; border-radius: 8px;
     cursor: pointer;
+}
+#settingcon{
+    z-index: 999;
+    position: fixed;
+    width: 100dvw; height:60dvh ;
+    top: 18dvh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(43, 7, 7, 0.865);
+}
+#text {
+    height: 8dvh; 
+    width: 70dvw;
+    position: absolute;right: 0;
+    border-radius: 5px;
+    border: solid black 1px;
+    font-size:1.35rem; 
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    color: black;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 *{
     user-select: none;
